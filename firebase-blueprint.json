@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Hotel": {
+      "title": "Hotel",
+      "description": "A hotel listing.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "price": { "type": "number", "description": "Price in INR" },
+        "rating": { "type": "number" },
+        "image": { "type": "string" },
+        "amenities": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "A hotel reservation.",
+      "type": "object",
+      "properties": {
+        "bookingId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userEmail": { "type": "string" },
+        "hotelName": { "type": "string" },
+        "checkInDate": { "type": "string" },
+        "checkOutDate": { "type": "string" },
+        "guests": { "type": "number" },
+        "totalPrice": { "type": "number" },
+        "status": { "type": "string", "enum": ["Confirmed", "Cancelled"] },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "Restaurant": {
+      "title": "Restaurant",
+      "description": "A restaurant listing.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "city": { "type": "string" },
+        "cuisine": { "type": "string" },
+        "rating": { "type": "number" },
+        "costForTwo": { "type": "number" },
+        "image": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/hotels/{hotelId}": { "schema": "Hotel", "description": "Hotel listings." },
+    "/restaurants/{restaurantId}": { "schema": "Restaurant", "description": "Restaurant listings." },
+    "/bookings/{bookingId}": { "schema": "Booking", "description": "Hotel and restaurant bookings." },
+    "/users/{userId}": { "schema": "User", "description": "User profiles." }
+  }
+}

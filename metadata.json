@@ -1,0 +1,6 @@
+{
+  "name": "StayFlow Basic",
+  "description": "Simple Hotel Management App using React and Express with JWT.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

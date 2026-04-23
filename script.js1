@@ -1,0 +1,24 @@
+function selectElements() {
+
+    // Select element by ID
+    let h = document.getElementById("heading");
+    h.style.color = "green";
+
+    // Select elements by Class Name
+    let p = document.getElementsByClassName("para");
+    p[0].style.color = "blue";
+    p[1].style.color = "red";
+
+    // Select elements by Tag Name
+    let d = document.getElementsByTagName("div");
+    d[0].style.backgroundColor = "green";
+    d[1].style.backgroundColor = "pink";
+    // Select first element using querySelector
+    let firstPara = document.querySelector(".para");
+    firstPara.style.fontWeight = "bold";
+    // Select all elements using querySelectorAll
+    let allPara = document.querySelectorAll(".para");
+    allPara.forEach(function(item) {
+        item.style.fontSize = "18px";
+    });
+}
